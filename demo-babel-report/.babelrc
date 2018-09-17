@@ -1,0 +1,43 @@
+{
+  "env": {
+    "development": {
+      "plugins": [
+        "dynamic-import-node",
+        "react-hot-loader/babel",
+        "dva-hmr",
+        ["import", { "libraryName": "antd", "style": "css" }]
+      ]
+    }
+  },
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": ["IE >= 9"]
+        },
+        "useBuiltIns": "usage"
+      }
+    ],
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "@babel/transform-runtime",
+      {
+        "helpers": false
+      }
+    ],
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/proposal-do-expressions",
+    "@babel/proposal-export-default-from",
+    "@babel/proposal-export-namespace-from",
+    "@babel/proposal-optional-chaining",
+    "@babel/proposal-throw-expressions",
+    "@babel/syntax-dynamic-import",
+    "@babel/syntax-import-meta"
+  ]
+}
